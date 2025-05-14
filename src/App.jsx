@@ -6,17 +6,14 @@ const App = () => {
   const [questionData, setQuestionData] = useState(questions);
 
   return (
-    <div className="container">
-      {questionData.map((question) => {
-        return (
-          <SingleQuestion
-            key={question.id}
-            title={question.title}
-            info={question.info}
-          />
-        );
-      })}
-    </div>
+    <main>
+      <section className="container">
+        <h1>Questions</h1>
+        {questionData.map((question) => {
+          return <SingleQuestion key={question.id} {...question} />;
+        })}
+      </section>
+    </main>
   );
 };
 export default App;
